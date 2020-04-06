@@ -31,7 +31,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 40%;
-  font-size: 2.5rem;
+  font-size: 2rem;
   width: 100%;
 }
 
@@ -69,4 +69,47 @@ body {
 .fail {
   background-color: red !important;
   cursor: not-allowed !important;
+}
+
+#gameover-panel {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+#gameover-panel h1 {
+  font-size: 8rem;
+  color: green;
+}
+
+#gameover-panel button {
+  padding: 20px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 1.5rem;
+}
+#gameover-panel button:hover {
+  border: 1px solid green;
+  cursor: pointer;
+}
+.gameOver {
+  transform: translateY(0) !important;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  #gameover-panel h1 {
+    font-size: 4rem;
+  }
 }
