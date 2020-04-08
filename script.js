@@ -6,7 +6,7 @@ const game_Over_Panel = document.getElementById("gameover-panel");
 const game_result_label = document.getElementById("game-result");
 
 const MAX_FAILS = 5;
-var password = "haslo".toUpperCase();
+var password = "";
 var hashedPassword = "";
 var failures = 0;
 var passwordLength = 0;
@@ -52,9 +52,20 @@ function check(element) {
   }
 }
 
+function getRandomWord(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  var index = Math.floor(Math.random() * (max - min)) + min;
+
+  return passwords[index].toUpperCase();
+}
+
 function startUp() {
+  password = getRandomWord(0, passwords.length);
   hidePassword(password);
+
   password_field.innerHTML = hashedPassword;
+
   var passwordSubstrings = password.split(" ");
 
   passwordSubstrings.forEach((el) => {
